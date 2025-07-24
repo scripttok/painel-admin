@@ -1,0 +1,330 @@
+/* ListAcademias.css */
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo geral do container */
+.container {
+  display: flex;
+  min-height: 100vh;
+  font-family: "Arial", sans-serif;
+  background-color: #f4f7fa;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 16rem;
+  background-color: #1a202c;
+  color: #fff;
+  padding: 1.5rem;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.sidebar-title {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.sidebar nav ul {
+  list-style: none;
+}
+
+.sidebar-item {
+  margin-bottom: 1rem;
+}
+
+.sidebar-link {
+  display: block;
+  padding: 0.75rem;
+  color: #a0aec0;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar-link:hover {
+  background-color: #2d3748;
+  color: #fff;
+}
+
+.sidebar-link.active {
+  background-color: #2b6cb0;
+  color: #fff;
+}
+
+.sidebar-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #e53e3e;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.sidebar-button:hover {
+  background-color: #c53030;
+}
+
+/* Conteúdo principal */
+.main-content {
+  margin-left: 16rem;
+  padding: 2rem;
+  width: calc(100% - 16rem);
+}
+
+.main-title {
+  font-size: 1.75rem;
+  color: #2d3748;
+  margin-bottom: 1.5rem;
+}
+
+.error-message {
+  color: #e53e3e;
+  margin-bottom: 1rem;
+}
+
+/* Tabela */
+.table-container {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+.academy-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-header th {
+  background-color: #edf2f7;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.table-row td {
+  padding: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.table-row:hover {
+  background-color: #f7fafc;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.edit-button,
+.delete-button,
+.block-button,
+.unblock-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.edit-button {
+  background-color: #2b6cb0;
+  color: #fff;
+}
+
+.edit-button:hover {
+  background-color: #2c5282;
+}
+
+.delete-button {
+  background-color: #e53e3e;
+  color: #fff;
+}
+
+.delete-button:hover {
+  background-color: #c53030;
+}
+
+.block-button {
+  background-color: #f6ad55;
+  color: #fff;
+}
+
+.block-button:hover {
+  background-color: #dd6b20;
+}
+
+.unblock-button {
+  background-color: #48bb78;
+  color: #fff;
+}
+
+.unblock-button:hover {
+  background-color: #38a169;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  color: #2d3748;
+  margin-bottom: 1rem;
+}
+
+.modal-error {
+  color: #e53e3e;
+  margin-bottom: 1rem;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+}
+
+.form-input {
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #2b6cb0;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.save-button,
+.cancel-button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.save-button {
+  background-color: #2b6cb0;
+  color: #fff;
+}
+
+.save-button:hover {
+  background-color: #2c5282;
+}
+
+.cancel-button {
+  background-color: #e2e8f0;
+  color: #2d3748;
+}
+
+.cancel-button:hover {
+  background-color: #cbd5e0;
+}
+
+/* Loading */
+.loading {
+  font-size: 1.25rem;
+  color: #2d3748;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 1rem;
+  }
+
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .academy-table {
+    font-size: 0.875rem;
+  }
+
+  .table-header th,
+  .table-row td {
+    padding: 0.5rem;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .modal-content {
+    margin: 1rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 1.25rem;
+  }
+
+  .form-input {
+    font-size: 0.875rem;
+  }
+
+  .save-button,
+  .cancel-button {
+    padding: 0.5rem 1rem;
+  }
+}
